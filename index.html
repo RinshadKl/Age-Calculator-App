@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age-calculator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/logoipsum-245.svg" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Age Calculator</h1>
+            <p>Enter your birthdate and see how old you are</p>
+            <div class="form">
+                <div class="calculator-container">  
+                    <input type="date" name="birthDate" id="date" required>
+                    <button onclick="calculateAge()" type="button" id="submit" value="Calculate" name="submit">Calculate</button>
+                </div>
+            </div>
+            <div id="result-div" class="popup">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <div class="age-result">
+                        <h2>Your Age</h2>
+                        <table>
+                            <tr>
+                                <th>Year</th>
+                                <th>Month</th>
+                                <th>Days</th>
+                            </tr>
+                            <tr>
+                                <td id="Yearresult"></td>
+                                <td id="Monthresult"></td>
+                                <td id="Dateresult"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
