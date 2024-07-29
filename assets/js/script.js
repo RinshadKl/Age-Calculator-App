@@ -1,11 +1,18 @@
 let userInput = document.getElementById("date");
 userInput.max = new Date().toISOString().split("T")[0];
+
 let Yearresult = document.getElementById("Yearresult");
 let Monthresult = document.getElementById("Monthresult");
 let Dateresult = document.getElementById("Dateresult");
 
-function calculateAge(){
-    let birthDate = new Date(userInput.value);
+function calculateAge() {
+    let birthDateValue = userInput.value;
+    if (!birthDateValue) {
+        alert("Please select a birthdate");
+        return;
+    }
+
+    let birthDate = new Date(birthDateValue);
 
     let d1 = birthDate.getDate();
     let m1 = birthDate.getMonth() + 1;
@@ -21,31 +28,29 @@ function calculateAge(){
 
     y3 = y2 - y1;
 
-    if(m2 >= m1){
+    if (m2 >= m1) {
         m3 = m2 - m1;
-    }else{
+    } else {
         y3--;
         m3 = 12 + m2 - m1;
     }
 
-    if(d2 >= d1){
+    if (d2 >= d1) {
         d3 = d2 - d1;
-    }else{
+    } else {
         m3--;
         d3 = getDaysInMonth(y1, m1) + d2 - d1;
     }
 
-    if(m3 < 0){
+    if (m3 < 0) {
         m3 = 11;
-        y3--;   
+        y3--;
     }
 
-    // Update result elements
     Yearresult.innerHTML = y3;
     Monthresult.innerHTML = m3;
     Dateresult.innerHTML = d3;
 
-    // Show popup
     var popup = document.getElementById("result-div");
     popup.style.display = "block";
 }
@@ -57,7 +62,12 @@ span.onclick = function() {
     popup.style.display = "none";
 }
 
-
 function getDaysInMonth(year, month) {
     return new Date(year, month, 0).getDate();
 }
+
+userInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        calculateAge();
+    }
+});
