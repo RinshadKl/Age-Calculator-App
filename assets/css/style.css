@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: grey;
+    background-color: #36C2CE ;
 }
 
 .container {
@@ -17,12 +17,11 @@ body {
 .header {
     width: 35%;
     margin:  auto;
-    background-color: #FFFFFF ;
+    background-color: #478CCF ;
     text-align: center;
     padding: 20px 0 50px 0 ;
     margin-top: 250px ;
     border-radius: 30px;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.473);
 }
 
 .header h1 { 
@@ -34,7 +33,7 @@ body {
     font-size: large;
     position: relative;
     top: -10px;
-    color: #A16B35;
+    color: #4535C1;
 } 
 
 .calculator-container {
@@ -53,7 +52,7 @@ body {
     padding: 10px 15px;
     border-radius: 60px;
     border: none;
-    outline-color: bisque;
+    outline-color: #36C2CE;
     background-color: #AFDDE6;
 }
 
